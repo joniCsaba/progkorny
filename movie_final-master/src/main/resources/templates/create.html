@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Film létrehozása</title>
+
+    <link rel="stylesheet"
+          th:href="@{/webjars/bootstrap/5.1.3/css/bootstrap.min.css}"/>
+    <script th:src="@{/webjars/bootstrap/5.1.3/js/bootstrap.min.js}"></script>
+</head>
+<body>
+
+<div class="container">
+
+    <h3 class="pt-5">Film létrehozása</h3>
+
+    <div class="row">
+        <div class="col-md-4 mt-5">
+            <form method="post"
+                  th:action="@{/movie_final/create}"
+                  th:object="${movie}">
+                <div class="form-group">
+                    <label for="title">Cím</label>
+                    <input type="text"
+                           id="title"
+                           th:field="*{title}"
+                           class="form-control"
+                           required/>
+                </div>
+                <div class="form-group">
+                    <label for="director">Rendező</label>
+                    <input type="text"
+                           id="director"
+                           th:field="*{director}"
+                           class="form-control"
+                           required/>
+                </div>
+                <div class="form-group">
+                    <label for="releaseDate">Kiadási dátum</label>
+                    <input type="date"
+                           id="releaseDate"
+                           th:field="*{releaseDate}"
+                           class="form-control"
+                           required/>
+                </div>
+                <div class="form-group">
+                    <label for="ageRestriction">Korhatár</label>
+                    <input type="number"
+                           id="ageRestriction"
+                           th:field="*{ageRestriction}"
+                           class="form-control"
+                           required/>
+                </div>
+                <div class="form-group">
+                    <label for="genre">Műfaj</label>
+                    <select id="genre" th:field="*{genre}" class="form-control" required>
+                        <option value="" disabled selected>Select genre</option>
+                        <option th:each="genre : ${genres}" th:value="${genre}" th:text="${genre}"></option>
+                    </select>
+                </div>
+
+                <button class="btn btn-primary pt-2"
+                        type="submit">Létrehozás
+                </button>
+                <a th:href="@{/movie_final}"
+                   class="btn btn-secondary pt-2"
+                   type="button">Mégsem</a>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+<script>
+
+</script>
+
+</body>
+</html>

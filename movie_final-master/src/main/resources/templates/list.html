@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Filmek listája</title>
+  <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.1.3/css/bootstrap.min.css}"/>
+  <script th:src="@{/webjars/bootstrap/5.1.3/js/bootstrap.min.js}"></script>
+</head>
+<body>
+
+<div class="container">
+  <h3 class="pt-5">Filmek listája</h3>
+  <a th:href="@{'/movie_final/create'}" type="button" class="btn btn-primary">Új hozzáadása</a>
+  <table class="table table-striped pt-5">
+    <caption>Filmek listája</caption>
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Cím</th>
+      <th scope="col">Rendező</th>
+      <th scope="col">Kiadási dátum</th>
+      <th scope="col">Korhatár</th>
+      <th scope="col">Műfaj</th>
+      <th scope="col">Akció</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="movie : ${movies}">
+      <th scope="row" th:text="${movie.id}"></th>
+      <td th:text="${movie.title}"></td>
+      <td th:text="${movie.director}"></td>
+      <td th:text="${movie.releaseDate}"></td>
+      <td th:text="${movie.ageRestriction}"></td>
+      <td th:text="${movie.genre}"></td>
+      <td>
+        <a th:href="@{'/movie_final/' + ${movie.id}}" type="button" class="btn btn-warning">Szerkesztés</a>
+        <a th:href="@{'/movie_final/' + ${movie.id} + '/delete'}" type="button" class="btn btn-danger">Törlés</a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>
