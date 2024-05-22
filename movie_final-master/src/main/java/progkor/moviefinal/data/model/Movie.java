@@ -1,4 +1,4 @@
-package progkor.movie_final.data.model;
+package progkor.moviefinal.data.model;
 
 public class Movie {
 

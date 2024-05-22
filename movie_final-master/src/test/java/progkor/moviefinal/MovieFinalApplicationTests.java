@@ -1,4 +1,4 @@
-package progkor.movie_final;
+package progkor.moviefinal;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
