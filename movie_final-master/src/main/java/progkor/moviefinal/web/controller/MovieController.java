@@ -118,6 +118,6 @@ public class MovieController {
      */
     private List<String> getGenres() {
         return Arrays.asList("Action", "Comedy", "Drama",
-                "Horror", "Romance", "Sci-Fi", "Thriller");
+                "Horror", "Thriller");
     }
 }
