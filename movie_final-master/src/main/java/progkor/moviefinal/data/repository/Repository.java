@@ -5,8 +5,9 @@ import java.util.List;
 /**
  * A generic interface representing a repository for managing data entities.
  *
- * @param <T> The type of entity managed by the repository.
- * @param <IdT> The type of the unique identifier for the entity.
+ * @param <T>  The type of entity managed by the repository.
+ * @param <IdT> The type of the unique identifier for the entity,
+ *             it should end with "T" because of checkstyle.
  */
 public interface Repository<T, IdT> {
     /**
