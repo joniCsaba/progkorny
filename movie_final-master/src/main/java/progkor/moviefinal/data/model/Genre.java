@@ -8,5 +8,6 @@ public enum Genre {
     ACTION,
     COMEDY,
     DRAMA,
-    THRILLER
+    THRILLER,
+    WORKFLOWTEST
 }
